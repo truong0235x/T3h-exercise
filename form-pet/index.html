@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-pet</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container__wrapper">
+            <div class="container__wrapper__image">
+                <div class="container__wrapper__image__trademark"><i class="fas fa-paw"></i> PUPASSURE</div>
+                <div class="container__wrapper__image__dog"><img src="../img/dog.png" alt=""></div>
+            </div>
+
+            <div class="container__wrapper__form">
+                <form action="">
+                    <h2>Yay, puppies! Ensure your pup gets the best care!</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Name</label><br>
+                                <input type="text" placeholder="Pet's name">
+                            </td>
+                            <td>
+                                <label for="uploadfile" class="container__wrapper__form__icon">
+                                    <i class="fas fa-camera-retro"></i> Upload a photo
+                                </label><br>
+                                <input type="file" id="uploadfile" accept="image/*">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Breed</label><br>
+                                <input type="text" placeholder="Pet's breed">
+                            </td>
+                            <td>
+                                <label for="">Birthday</label><br>
+                                <input type="date">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="">Gender</label><br>
+                                <div class="container__wrapper__form__radio">
+                                    <input type="radio" name="Gender" id="female" checked>
+                                    <label for="female">Female</label>
+                                    <input type="radio" name="Gender" id="male">
+                                    <label for="male">Male</label>
+                                </div>
+                            </td>
+                            <td>
+                                <label for="">Spayed or Neutered</label><br>
+                                <div class="container__wrapper__form__radio">
+                                    <input type="radio" name="spayed-neutered" id="spayed" checked>
+                                    <label for="spayed">Spayed</label>
+                                    <input type="radio" name="spayed-neutered" id="neutered">
+                                    <label for="neutered">Neutered</label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <label for="">Weight</label><br>
+                                <div class="container__wrapper__form__radio">
+                                    <input type="radio" name="Weight" id="lbs-0-25" checked>
+                                    <label for="lbs-0-25">0-25 lbs</label>
+                                    <input type="radio" name="Weight" id="lbs-25-50">
+                                    <label for="lbs-25-50">25-50 lbs</label>
+                                    <input type="radio" name="Weight" id="lbs-50-100">
+                                    <label for="lbs-50-100">50-100 lbs</label>
+                                    <input type="radio" name="Weight" id="lbs-100">
+                                    <label for="lbs-100">100+ lbs</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="container__wrapper__form__end">
+                    <div class="container__wrapper__form__end__back">Back</div>
+                    <div class="container__wrapper__form__end__next">Next</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
