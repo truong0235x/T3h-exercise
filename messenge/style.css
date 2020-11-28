@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #c9dbe7;
+}
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px auto;
+    width: 950px;
+    display: grid;
+    grid-template-columns: 37% 63% ;
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.container__wrapper {
+    background-color: #454756;
+}
+
+.container__box {
+    background-color: #f4f5fa;
+    border-bottom: 2px solid #646d73;
+}
+
+.container__wrapper__search {
+    margin: 20px;
+    border: 3px solid #43464f;
+    border-radius: 7px;
+    height: 53px;
+    width: 78%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+.container__wrapper__search > input {
+    position: absolute;
+    top: 0;
+    padding: 16px 13px;
+    border: none;
+    background-color: #696c73;
+    width: 83%;
+    outline: none;
+}
+.container__wrapper__search > i {
+    position: absolute;
+    background-color: #696c73;
+    padding: 16px 11px;
+    right: 0;
+    color: white;
+}
+
+.container__wrapper__list {
+    margin: 20px;
+    width: 78%;
+}
+.container__wrapper__list-friend {
+    display: grid;
+    margin: 20px 0;
+    grid-template-columns: 30% 70%;
+}
+.container__wrapper__list-friend__image {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 82px;
+    width: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container__wrapper__list-friend__image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.container__wrapper__list-friend__name {
+    font-size: 20px;
+    margin-top: 13px;
+    margin-left: 10px;
+    color: white;
+}
+
+.container__wrapper__list-friend__status {
+    margin: 0 10px;
+    position: relative;
+}
+[class^="container__wrapper__list-friend__status__turn"] {
+    position: absolute;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: 22%;
+}
+.container__wrapper__list-friend__status__turn-on {
+    background-color: #8eb769;
+}
+.container__wrapper__list-friend__status__turn-of {
+    background-color: #e3885f;
+}
+.container__wrapper__list-friend__status > span {
+    margin-left: 15px;
+    font-size: 18px;
+    color: #81838c;
+}
+
+.container__box__information {
+    display: grid;
+    grid-template-columns: 82px auto;
+    position: relative;
+}
+.container__box__information__image {
+    margin: 20px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 82px;
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid #89bb76;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+.container__box__information__image > img {
+    position: absolute;
+    top: -10%;
+    left: -7%;
+    width: 120%;
+    height: 120%;
+}
+.container__box__information__name {
+    font-size: 20px;
+    position: absolute;
+    top: 28%;
+    left: 18%;
+}
+.container__box__information i {
+    position: absolute;
+    top: 40%;
+    font-size: 25px;
+    right: 5%;
+    color: #dbdce1;
+}
+.container__box__information__nember-messages {
+    position: absolute;
+    left: 18%;
+    top: 54%;
+    color: #98999e;
+}
+.container__box > hr {
+    width: 100%;
+    height: 3px;
+    border: none;
+    background-color: #fafbfd;
+}
+
+.container__box__messenger__receive {
+    margin: 35px 35px 50px 35px;
+}
+
+.container__box__messenger__receive__name-datetime {
+    position: relative;
+}
+.container__box__messenger__receive__name-datetime::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #8eb769;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.container__box__messenger__receive__name-datetime > p {
+    margin: 20px;
+    font-size: 20px;
+}
+.container__box__messenger__receive__name-datetime > p > span {
+    color: #98999e;
+}
+
+.container__box__messenger__receive__content::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    display: block;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #91ba78;
+}
+.container__box__messenger__receive__content {
+    position: relative;
+    width: 80%;
+    background-color: #91ba78;
+    color: white;
+    padding: 25px 28px 25px 25px;
+    margin-top: 23px;
+    border-radius: 7px;
+}
+.container__box__messenger__receive__content > p {
+    font-size: 18px;
+}
+
+.container__box__messenger__sent {
+    text-align: right;
+    margin: 35px 35px 50px 35px;
+}
+
+.container__box__messenger__sent__name-datetime {
+    font-size: 20px;
+    position: relative;
+}
+.container__box__messenger__sent__name-datetime > p {
+    margin-right: 5%;
+}
+.container__box__messenger__sent__name-datetime::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #9dc3e8;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+}
+.container__box__messenger__sent__name-datetime > p > span {
+    color: #98999e;
+}
+
+.container__box__messenger__sent__content {
+    position: relative;
+    width: 80%;
+    background-color: #9dc3e8;
+    color: white;
+    padding: 25px 24px 25px 25px;
+    margin-left: 10%;
+    margin-top: 20px;
+    border-radius: 7px;
+    margin-right: 0;
+}
+.container__box__messenger__sent__content::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    right: 5%;
+    display: block;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #9dc3e8;
+}
+.container__box__messenger__sent__content > p {
+    text-align: left;
+    font-size: 18px;
+}
+
+.container__box__messenger__receive__three-dots {
+    position: relative;
+}
+.container__box__messenger__receive__three-dots::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #8eb769;
+}
+.container__box__messenger__receive__three-dots::before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin-left: 5%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #b1d6a1;
+}
+.container__box__messenger__receive__three-dots > p::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 12px;
+    left: 10%;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #dee6e0;
+}
+
+.container__box__messenge {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container__box__messenge__type-messenge {
+    width: 82%;
+    height: 140px;
+    background-color: #ffffff;
+    margin: 50px 50px 20px 50px;
+    border-radius: 10px;
+}
+.container__box__messenge__type-messenge > input {
+    border: none;
+    margin: 25px;
+    font-size: 20px;
+    color: #9b9b9b;
+}
+
+.container__box__messenge__send {
+    margin: 0 50px;
+    position: relative;
+}
+.container__box__messenge__send > input {
+    display: none;
+}
+.container__box__messenge__send > label > i {
+    font-size: 30px;
+    color: #7f8181;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.container__box__messenge__send > button {
+    border: none;
+    font-weight: bolder;
+    color: #b1c7e5;
+    font-size: 35px;
+    position: absolute;
+    top: -11%;
+    right: 2%;
+    background-color: #f4f5fa;
+}
