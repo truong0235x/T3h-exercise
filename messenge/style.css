@@ -42,6 +42,7 @@ body {
     border: none;
     background-color: #696c73;
     width: 83%;
+    height: 100%;
     outline: none;
 }
 .container__wrapper__search > i {
@@ -336,4 +337,5 @@ body {
     top: -11%;
     right: 2%;
     background-color: #f4f5fa;
+    cursor: pointer;
 }

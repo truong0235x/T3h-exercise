@@ -41,6 +41,7 @@ body {
     border-radius: 50%;
     background-color: rosybrown;
     color: #5c4f5f;
+    transform: rotate(-45deg);
 }
 .container__wrapper__image__dog{
     position: absolute;
