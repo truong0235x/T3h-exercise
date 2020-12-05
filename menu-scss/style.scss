@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 50px;
+    background-color: #eeeeee;
+
+    .container__wrapper {
+        width: 300px;
+        background-color: white;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        .container__wrapper__list {
+            list-style: none;
+
+            .container__wrapper__list__item {
+                display: flex;
+                width: 100%;
+                height: 80px;
+                position: relative;
+                padding: 15px 20px;
+                color: #777;
+
+                &:hover .isactive {
+                    display: block;
+                    border-left: none;
+                }
+
+                &:hover .isactive::after {
+                    display: block;
+                }
+
+                &:hover .isactive::before {
+                    display: none;
+                }
+
+                &:active .isactive {
+                    display: block;
+                    border-left: 6px solid #e57d23;
+                }
+
+                &:active .isactive::before {
+                    display: block;
+                }
+
+                .isactive {
+                    display: none;
+                    width: 312px;
+                    height: 80px;
+                    padding: 0 6px;
+                    position: absolute;
+                    top: 0;
+                    left: -6px;
+                    box-sizing: none;
+                    border-left: 6px solid #e57d23;
+                    border-right: 6px solid #e57d23;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        border-right: 10px solid #e57d23;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: -1px;
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        border-left: 10px solid #e57d23;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+                &:not(:last-child) {
+                    border-bottom: 2px solid #f0f0f0;
+                }
+
+                &:hover i, &:hover a {
+                    color: #e57d23;
+                }
+
+                &:hover .child-list{
+                    display: block;
+                }
+
+                &:active {
+                    box-shadow: 0px 0px 8px -2px black;
+                }
+
+                &:active a, &:active i {
+                    color: #e57d23;
+                }
+
+                i {
+                    font-size: 35px;
+                }
+                a {
+                    padding-left: 15px;
+                    color: #777;
+                    text-decoration: none;
+                    h3 {
+                        font-size: 25px;
+                    }
+                }
+
+                .container__wrapper__list__item__search {
+                    width: 100%;
+                    border: 1px solid #f0f0f0;
+                    display: flex;
+                    color: #777;
+                    text-align: center;
+                    input {
+                        padding-left: 10px;
+                        outline: none;
+                        border: none;
+                        width: 70%;
+                        font-size: 20px;
+                    }
+                    i {
+                        background-color: #e57d23;
+                        color: #fff;
+                        width: 30%;
+                        padding: 10px;
+                        height: 100%;
+                    }
+                }
+
+                .child-list {
+                    display: none;
+                    position: absolute;
+                    left: 100%;
+                    list-style: none;
+                    width: 270px;
+                    top: 0;
+                    border-left: 6px solid #e57d23;
+
+                    .child-list__item {
+                        position: relative;
+                        width: 100%;
+                        padding: 10px;
+                        height: 55px;
+                        background-color: white;
+
+                        &:not(:last-child) {
+                            border-bottom: 2px solid #f0f0f0;
+                        }
+
+                        i {
+                            padding-right: 10px;
+                        }
+
+                        a, i{
+                            color: #777;
+                            font-size: 20px;
+                            line-height: 35px;
+                        }
+
+                        &:hover a, &:hover i{
+                            color: #e57d23;
+                        }
+
+                        &:hover::after {
+                            content: "";
+                            display: block;
+                        }
+
+                        &::after {
+                            content: "";
+                            display: none;
+                            position: absolute;
+                            right: 0;
+                            border-top: 8px solid transparent;
+                            border-bottom: 8px solid transparent;
+                            border-right: 10px solid #e57d23;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+
+                        .child-list__item__active-left {
+                            position: absolute;
+                            right: 100%;
+                            width: 6px;
+                            background-color: #e57d23;
+                        }
+
+                        &:hover .list-team{
+                            display: block;
+                        }
+
+                        .list-team {
+                            display: none;
+                            position: absolute;
+                            left: 100%;
+                            list-style: none;
+                            width: 270px;
+                            top: 0;
+                            border-left: 6px solid #e57d23;
+
+                            .list-team__item {
+                                position: relative;
+                                width: 100%;
+                                padding: 10px;
+                                height: 55px;
+                                background-color: white;
+
+                                &:not(:last-child) {
+                                    border-bottom: 2px solid #f0f0f0;
+                                }
+
+                                a, i{
+                                    color: #777;
+                                    font-size: 20px;
+                                }
+
+                                &:hover a, &:hover i{
+                                    color: #e57d23;
+                                }
+
+                                &:hover::after {
+                                    content: "";
+                                    display: block;
+                                }
+
+                                &::after {
+                                    content: "";
+                                    display: none;
+                                    position: absolute;
+                                    right: 0;
+                                    border-top: 8px solid transparent;
+                                    border-bottom: 8px solid transparent;
+                                    border-right: 10px solid #e57d23;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                }
+
+                                .list-team__item__active-left {
+                                    position: absolute;
+                                    right: 100%;
+                                    width: 6px;
+                                    background-color: #e57d23;
+                                }
+
+                                &:hover .list-team-experience {
+                                    display: block;
+                                }
+
+                                .list-team-experience {
+                                    display: none;
+                                    position: absolute;
+                                    left: 100%;
+                                    list-style: none;
+                                    width: 270px;
+                                    top: 0;
+                                    border-left: 6px solid #e57d23;
+
+                                    .list-team-experience__item {
+                                        position: relative;
+                                        width: 100%;
+                                        padding: 10px;
+                                        height: 55px;
+                                        background-color: white;
+
+                                        &:not(:last-child) {
+                                            border-bottom: 2px solid #f0f0f0;
+                                        }
+
+                                        a, i{
+                                            color: #777;
+                                            font-size: 20px;
+                                        }
+
+                                        &:hover a, &:hover i{
+                                            color: #e57d23;
+                                        }
+
+                                        &:hover::after {
+                                            content: "";
+                                            display: block;
+                                        }
+
+                                        &::after {
+                                            content: "";
+                                            display: none;
+                                            position: absolute;
+                                            right: 0;
+                                            border-top: 8px solid transparent;
+                                            border-bottom: 8px solid transparent;
+                                            border-right: 10px solid #e57d23;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                        }
+
+                                        .list-team-experience__item__active-left {
+                                            position: absolute;
+                                            right: 100%;
+                                            width: 6px;
+                                            background-color: #e57d23;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
