@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding: 50px;
+  background-color: #eeeeee;
+}
+
+.container .container__wrapper {
+  width: 300px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.container .container__wrapper .container__wrapper__list {
+  list-style: none;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  padding: 15px 20px;
+  color: #777;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:hover .isactive {
+  display: block;
+  border-left: none;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:hover .isactive::after {
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:hover .isactive::before {
+  display: none;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:active .isactive {
+  display: block;
+  border-left: 6px solid #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:active .isactive::before {
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .isactive {
+  display: none;
+  width: 312px;
+  height: 80px;
+  padding: 0 6px;
+  position: absolute;
+  top: 0;
+  left: -6px;
+  -webkit-box-sizing: none;
+          box-sizing: none;
+  border-left: 6px solid #e57d23;
+  border-right: 6px solid #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .isactive::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #e57d23;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .isactive::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid #e57d23;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:not(:last-child) {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:hover i, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item:hover a {
+  color: #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:hover .child-list {
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:active {
+  -webkit-box-shadow: 0px 0px 8px -2px black;
+          box-shadow: 0px 0px 8px -2px black;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:active a, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item:active i {
+  color: #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item i {
+  font-size: 35px;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item a {
+  padding-left: 15px;
+  color: #777;
+  text-decoration: none;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item a h3 {
+  font-size: 25px;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .container__wrapper__list__item__search {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #777;
+  text-align: center;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .container__wrapper__list__item__search input {
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  width: 70%;
+  font-size: 20px;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .container__wrapper__list__item__search i {
+  background-color: #e57d23;
+  color: #fff;
+  width: 30%;
+  padding: 10px;
+  height: 100%;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list {
+  display: none;
+  position: absolute;
+  left: 100%;
+  list-style: none;
+  width: 270px;
+  top: 0;
+  border-left: 6px solid #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  height: 55px;
+  background-color: white;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item:not(:last-child) {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item i {
+  padding-right: 10px;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item a, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item i {
+  color: #777;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item:hover a, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item:hover i {
+  color: #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item:hover::after {
+  content: "";
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item::after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #e57d23;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .child-list__item__active-left {
+  position: absolute;
+  right: 100%;
+  width: 6px;
+  background-color: #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item:hover .list-team {
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team {
+  display: none;
+  position: absolute;
+  left: 100%;
+  list-style: none;
+  width: 270px;
+  top: 0;
+  border-left: 6px solid #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  height: 55px;
+  background-color: white;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item:not(:last-child) {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item a, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item i {
+  color: #777;
+  font-size: 20px;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item:hover a, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item:hover i {
+  color: #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item:hover::after {
+  content: "";
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item::after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #e57d23;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team__item__active-left {
+  position: absolute;
+  right: 100%;
+  width: 6px;
+  background-color: #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item:hover .list-team-experience {
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience {
+  display: none;
+  position: absolute;
+  left: 100%;
+  list-style: none;
+  width: 270px;
+  top: 0;
+  border-left: 6px solid #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  height: 55px;
+  background-color: white;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item:not(:last-child) {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item a, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item i {
+  color: #777;
+  font-size: 20px;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item:hover a, .container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item:hover i {
+  color: #e57d23;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item:hover::after {
+  content: "";
+  display: block;
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item::after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #e57d23;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .child-list .child-list__item .list-team .list-team__item .list-team-experience .list-team-experience__item .list-team-experience__item__active-left {
+  position: absolute;
+  right: 100%;
+  width: 6px;
+  background-color: #e57d23;
+}
+/*# sourceMappingURL=style.css.map */
