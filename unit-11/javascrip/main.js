@@ -35,7 +35,7 @@ function getObjectFromArray (array) {
   return objectFromArray
 }
 // lesson 5
-function getArraysAscending (...array) {
+function getArraysAscending (array) {
   array.sort()
   return array
 }
@@ -63,11 +63,11 @@ function getObjectNotPram (a, b) {
 	return objNew
 }
 // lesson 8
-function getArrayDelete (...array) {
+function getArrayDelete (array) {
   array.length >= 4 ? array.splice(1, 2) : 'The array must have more than 5 elements'
   return array
 }
-// leesson 9
+// lesson 9
 const students = [
   { id: 1, name: 'Nguyễn Thị Tèo', score: 9.2 },
   { id: 2, name: 'Phạm Văn Bưởi', score: 2.3 },
