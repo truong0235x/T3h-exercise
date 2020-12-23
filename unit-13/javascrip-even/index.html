@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascrip-even</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="onmouse">Lesson 1 hover</div><br><br>
-    <input type="text" id="input" placeholder="Lesson 2"><br><br>
-    <input type="number" id="inputnumber" placeholder="lesson 3"><br><br>
-    <div id="doubleclick" onMouseUp="checkMe()">lesson 4 double click</div><br><br>
-    <input type="text" value="onSelect" id="onselect"><br><br>
-    <select name="" id="select">
-        <option value="Apple">Apple</option>
-        <option value="Orange">Orange</option>
-        <option value="Banana">Banana</option>
-    </select>
+    <div class="hover-effect" onmouseover="onHoverDiv(event)" onmouseout="onNotHoverDiv(event)"></div>
+
+   <div>Account</div>
+   <input type="text" onkeyup ="checkAccount(event)"/>
+
+   <div>Amount:</div>
+   <input type="text" id="amount"/>
+
+   <p>Hãy viết 1 hàm, bắt sự kiện người dùng bôi đen 1 phần tử nào đó trên trang web</p>
+
+   <select name="" id="" onchange="onChangeFruit(event)" >
+       <option value="banana">Chuối</option>
+       <option value="tomato">Cà chua</option>
+       <option value="vegetable">rau</option>
+   </select>
 </body>
-<script src="main.js"></script>
 </html>
