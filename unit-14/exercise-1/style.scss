@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .container__wrapper {
+        width: 400px;
+        margin-top: 50px;
+
+        .container__wrapper__list {
+            width: 100%;
+            list-style: none;
+
+            .container__wrapper__list__item {
+                background-color: #2a394f;
+                width: 100%;
+                height: 110px;
+                color: white;
+                box-sizing: border-box;
+                padding-left: 40px;
+                padding-right: 30px;
+                position: relative;
+
+                &:first-child {
+                    border-top-left-radius: 7px;
+                    border-top-right-radius: 7px;
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 2px solid #2a364a;
+                    &:hover {
+                        border-bottom: 5px solid #355789;
+                    }
+                }
+
+                &:hover {
+                    background-color: #222e41;
+                }
+
+
+                .icon {
+                    font-size: 25px;
+                    line-height: 105px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    line-height: 105px;
+                    font-size: 25px;
+                    padding-left: 20px;
+
+                    .angle {
+                        position: absolute;
+                        right: 11%;
+                        line-height: 105px;
+                    }
+                }
+            }
+        #settings {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            &:hover {
+                border-top: 5px solid #355789 !important;
+                border-bottom: none !important;
+            }
+        }
+
+            .list__child {
+                list-style: none;
+                width: 100%;
+
+                .list__child__item {
+                    background-color: #16a4f9;
+                    width: 100%;
+                    height: 110px;
+                    color: white;
+                    box-sizing: border-box;
+                    padding-right: 30px;
+
+                    &:hover {
+                        background-color: #0c93e3;
+                        border-left: 5px solid #1c71a4;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        line-height: 105px;
+                        font-size: 25px;
+                        padding-left: 40px;
+
+                    }
+                }
+            }
+        }
+    }
+}
