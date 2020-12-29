@@ -1,59 +1,44 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 1000px;
-  margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.container .container__wrapper {
-  width: 400px;
-  margin-top: 50px;
-}
-
-.container .container__wrapper .container__wrapper__list {
-  width: 100%;
+.list {
+  width: 370px;
   list-style: none;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item {
+.list .list__item {
   background-color: #2a394f;
   width: 100%;
-  height: 110px;
   color: white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding-left: 40px;
-  padding-right: 30px;
   position: relative;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:first-child {
+.list .list__item:first-child {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:not(:last-child) {
+.list .list__item:not(:last-child) {
   border-bottom: 2px solid #2a364a;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:not(:last-child):hover {
+.list .list__item:not(:last-child):hover {
   border-bottom: 5px solid #355789;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item:hover {
+.list .list__item:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.list .list__item:hover {
   background-color: #222e41;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item .icon {
+.list .list__item .icon {
+  padding-left: 20px;
   font-size: 25px;
   line-height: 105px;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item a {
+.list .list__item a {
   text-decoration: none;
   color: white;
   line-height: 105px;
@@ -61,28 +46,22 @@
   padding-left: 20px;
 }
 
-.container .container__wrapper .container__wrapper__list .container__wrapper__list__item a .angle {
+.list .list__item .angle {
+  cursor: pointer;
   position: absolute;
   right: 11%;
   line-height: 105px;
+  font-size: 25px;
 }
 
-.container .container__wrapper .container__wrapper__list #settings {
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-}
-
-.container .container__wrapper .container__wrapper__list #settings:hover {
-  border-top: 5px solid #355789 !important;
-  border-bottom: none !important;
-}
-
-.container .container__wrapper .container__wrapper__list .list__child {
+.list .list__item .list__child {
+  display: none;
   list-style: none;
   width: 100%;
+  margin-left: -40px;
 }
 
-.container .container__wrapper .container__wrapper__list .list__child .list__child__item {
+.list .list__item .list__child .list__child__item {
   background-color: #16a4f9;
   width: 100%;
   height: 110px;
@@ -92,12 +71,12 @@
   padding-right: 30px;
 }
 
-.container .container__wrapper .container__wrapper__list .list__child .list__child__item:hover {
+.list .list__item .list__child .list__child__item:hover {
   background-color: #0c93e3;
   border-left: 5px solid #1c71a4;
 }
 
-.container .container__wrapper .container__wrapper__list .list__child .list__child__item a {
+.list .list__item .list__child .list__child__item a {
   text-decoration: none;
   color: white;
   line-height: 105px;
