@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.btn-out-table {
+    box-sizing: border-box;
+    padding: 10px 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .btnadd {
+        border-radius: 5px;
+        font-size: 20px;
+        background-color: #007bff;
+        color: white;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+
+    .btndelete {
+        margin-left: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        background-color: #dc3545;
+        color: white;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+}
+table {
+    .action {
+        .edit {
+            border-radius: 5px;
+            font-size: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .save {
+            border-radius: 5px;
+            font-size: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .cancel {
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            background-color: #ffc108;
+            color: white;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .delete {
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            background-color: #dc3545;
+            color: white;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+    }
+}
