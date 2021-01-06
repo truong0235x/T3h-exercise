@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300|Shadows+Into+Light');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+
+    .container__wrapper {
+        display: grid;
+        width: 55%;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto 169px 169px 169px;
+        grid-gap: 10px;
+        padding: 0 30px;
+        margin: 10px 0;
+
+        p {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            text-align: center;
+        }
+
+        .container__wrapper__pokemon {
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .container__information-frame {
+        width: 633px;
+        margin-left: 50px;
+        background-color: #f8f8f8;
+        margin-top: 50px;
+
+        img {
+            margin-top: 30px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .name-pokemon {
+            font-size: 35px;
+        }
+        .line {
+            margin: 40px 0;
+
+            span {
+                display: inline-block;
+                margin: 0 20px;
+                font-size: 24px;
+            }
+
+            .line__hp {
+                background-color: #eeeeee;
+                margin-left: 20px;
+                display: inline-block;
+                height: 13px;
+                width: 400px;
+
+                .line__hp-rest {
+                    height: 13px;
+                    background-color: #23a1e0;
+                }
+            }
+        }
+
+        .add {
+            height: 30px;
+            width: 60px;
+            background-color: #1bbc9b;
+            color: white;
+            border: unset;
+            outline: unset;
+            cursor: pointer;
+        }
+
+        .notification {
+            display: none;
+            margin-top: 10px;
+            color: red;
+        }
+    }
+
+    .container__cereal-killers {
+        padding: 100px 150px;
+        width: 100%;
+        height: 400px;
+        background-image: linear-gradient(#36ac5d, #60ae96);
+        margin-top: 80px;
+
+        #namelist {
+            cursor: pointer;
+            font-size: 40px;
+            color: white;
+            span {
+                font-size: 20px;
+            }
+        }
+
+        input {
+            padding: 0 50px;
+            background-color: #41ac6c;
+            display: none;
+            border: 3px solid white;
+            width: 500px;
+            height: 50px;
+            font-size: 30px;
+            color: white;
+            top: 100px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .frames {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .frames__pokemon {
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                margin: 50px;
+                background-color: #408b66;
+                position: relative;
+
+                .close {
+                    opacity: 0.8;
+                    color: white;
+                    width: 23px;
+                    height: 23px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 5px;
+                    right: -5px;
+                    background-color: #3d8a62;
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

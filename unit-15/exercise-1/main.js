@@ -1,200 +1,214 @@
-const userList = [
+let data = [
   {
     id: 1,
-    fullName: 'Bùi Quang Trường',
-    gender: 'Nam',
-    age: 22,
+    isEdit: false,
+    checked: false,
+    fullName: 'Nguyễn Văn Nam',
+    gender: 'Nữ',
+    age: 12,
   },
   {
     id: 2,
-    fullName: 'Nguyễn thị Anh',
-    gender: 'Nữ',
-    age: 13,
+    isEdit: false,
+    checked: false,
+    fullName: 'Nguyễn Văn Nam',
+    gender: 'Nam',
+    age: 12,
   },
   {
     id: 3,
-    fullName: 'Nguyễn thị thư',
+    isEdit: true,
+    checked: true,
+    fullName: 'Nguyễn Văn Nam',
     gender: 'Nữ',
-    age: 20,
+    age: 12,
   }
 ]
 
-function renderListUser (array) {
-  const tbody = document.querySelector('tbody')
-  let html = ''
-  array.forEach(item => {
-    html += `
-      <tr>
-        <th scope="row"><input type="checkbox" value="${item.id}"></th>
-        <td>${item.id}</td>
-        <td><span class="text">${item.fullName}</span><input type="text" style="display: none" value="${item.fullName}"></td>
-        <td><span class="text">${item.gender}</span>
-            ${checkValueSelected(item.gender)}
-        </td>
-        <td><span class="text">${item.age}</span><input type="number" style="display: none" value="${item.age}"></td>
-        <td class="action">
-          <span class="save" onclick="onclickSaveEdit(this)" style="display: none">Save</span>
-          <span class="cancel" onclick="onclickCancel(this)" style="display: none">cancel</span>
-          <span class="edit" onclick="onclickEdit(this)">Edit</span>
-          <span class="delete" onclick="deleteTr(this)">Delete</span>
-        </td>
-      </tr>
-    `
-  })
-  tbody.innerHTML = html
-}
 
-function checkValueSelected (value) {
-  if (value === 'Nam') {
-    return `
-      <select name="" style="display: none" id="gender">
-        <option value="Nam" selected>Nam</option>
-        <option value="Nữ">Nữ</option>
-      </select>
-    `
-  } else {
-    return `
-      <select name="" style="display: none" id="gender">
-          <option value="Nam" selected>Nam</option>
-          <option value="Nữ">Nữ</option>
-      </select>
-    `
-  }
-}
 
-renderListUser(userList)
+const createReadOnlyTr = item => {
+  const gender = item.gender === 'male' ? 'Nam' : 'Nữ'
 
-function addUserList () {
-  const tbody = document.querySelector('tbody')
-  let id
-
-  if (userList.length > 0) {
-    let i = userList.length - 1
-    id = Number(userList[i].id) + 1
-  } else {
-    id = 1
-  }
-
-  let html = `
-      <tr>
-        <th scope="row"><input type="checkbox" value=""></th>
-        <td>${id}</td>
-        <td><input type="text"></td>
-        <td>
-          <select id="gender">
-            <option value="Nam" selected>Nam</option>
-            <option value="Nữ">Nữ</option>
-          </select>
-        </td>
-        <td><input type="number"></td>
-        <td class="action">
-          <span class="save" onclick="onclickSaveAdd(this)">Save</span>
-          <span class="cancel" onclick="onclickCancel(this)">cancel</span>
-          <span class="edit" style="display: none">Edit</span>
-          <span class="delete" onclick="deleteTr(this)">Delete</span>
-        </td>
-      </tr>
+  const html =`
+    <tr>
+      <td>
+        <div class="mb-3 form-check">
+          <input onclick="tickRow(${item.id})" type="checkbox" ${item.checked ? 'checked' : ''} class="form-check">
+        </div>
+      </td>
+      <td>${item.id}</td>
+      <td>${item.fullName}</td>
+      <td>${item.gender}</td>
+      <td>${item.age}</td>
+      <td>
+          <button class="btn btn-info" onclick="setEdit(${item.id}, ${item.isEdit})">Edit</button>
+          <button class="btn btn-danger" onclick="deleteItem(${item.id}, this)">Delete</button>
+      </td>
+    </tr>
   `
-  tbody.innerHTML += html
+  return html
 }
 
-function onclickEdit (span) {
-  const td = span.parentNode
-  const tr = td.parentNode
+const creatIsEdit = item => {
+  const gender = item.gender === 'male' ? 'Nam' : 'Nữ'
 
-  const calcel = tr.querySelector('tr td .cancel')
-  calcel.style.display = 'inline-block'
-
-  const save = tr.querySelector('tr td .save')
-  save.style.display = 'inline-block'
-
-  const edit = tr.querySelector('tr td .edit')
-  edit.style.display = 'none'
-
-
-  const input = tr.querySelectorAll('tr td input, select')
-  for (let j = 0; j < input.length; j++) {
-    input[j].style.display = 'block'
-  }
-
-
-  const text = tr.querySelectorAll('tr td .text')
-  for (let i = 0; i < text.length; i++) {
-    text[i].style.display = 'none'
-  }
+  const html =`
+    <tr class="is-edit">
+      <td>
+        <div class="mb-3 form-check">
+          <input type="checkbox" ${item.checked ? 'checked' : ''} class="form-check">
+        </div>
+      </td>
+      <td>
+        <input class="from-control" value="${item.id}" disabled>
+      </td>
+      <td>
+        <input class="from-control" value="${item.fullName}">
+      </td>
+      <td>
+        <select class="from-select">
+          <option value="Nữ" ${gender === 'Nữ' ? 'checked' : ''}>Nữ</option>
+          <option value="Nam" ${gender === 'Nam' ? 'checked' : ''}>Nam</option>
+        </select>
+      </td>
+      <td>
+        <input class="from-control" value="${item.age}">
+      </td>
+      <td>
+          <button class="btn btn-primary" onclick="saveRow(event, ${item.id})">Save</button>
+          <button class="btn btn-warning" onclick="setEdit(${item.id}, ${item.isEdit})">Cancel</button>
+          <button class="btn btn-danger" onclick="deleteItem(${item.id}, this)">Delete</button>
+      </td>
+    </tr>
+  `
+  return html
 }
 
+const render = () => {
+  const table = document.getElementById('table-body')
+  let html = ''
 
-function onclickSaveAdd(span) {
-  const td = span.parentNode
-  const tr = td.parentNode
-
-  const id = tr.querySelector('td').innerText
-  const fullName = tr.querySelector('td input[type="text"]').value
-  const gender = tr.querySelector('td select').value
-  const age = tr.querySelector('td input[type="number"]').value
-
-  userList.push({
-    id: id,
-    fullName: fullName,
-    gender: gender,
-    age: age,
+  data.forEach(item => {
+    html += item.isEdit ? creatIsEdit(item) : createReadOnlyTr(item)
   })
+
+  table.innerHTML = html
 }
 
-function onclickSaveEdit(span) {
-  const td = span.parentNode
-  const tr = td.parentNode
-
-  const id = tr.querySelector('td').innerText
-  const fullName = tr.querySelector('td input[type="text"]').value
-  const gender = tr.querySelector('td select').value
-  const age = tr.querySelector('td input[type="number"]').value
-
-  for (let a = 0; a < userList.length; a++) {
-    if (userList[a].id == id) {
-      userList[a].id = id
-      userList[a].fullName = fullName
-      userList[a].gender = gender
-      userList[a].age = age
-    }
-  }
+function tickRow (id) {
+  const item = data.find(row => row.id === id)
+  item.checked = !item.checked
 }
 
-function deleteTr (span) {
-  const td = span.parentNode
-  const tr = td.parentNode
+function setEdit (id, isedit) {
+  const item = data.find(row => row.id === id)
+  item.isEdit = !isedit
 
+  render()
+}
+
+const deleteItem = (id, button) => {
+  data = data.filter(item => item.id != id)
+  const tr = button.closest('tr')
   tr.parentNode.removeChild(tr)
-
-  const id = tr.querySelector('td').innerText
-  for (let i = 0; i < userList.length; i++) {
-    if (userList[i].id == id) {
-      userList.splice(i, 1)
-    }
-  }
 }
 
-function onclickCancel (span) {
-  renderListUser(userList)
+function saveRow (event, id) {
+  const item = data.find(row => row.id === id)
+
+  const tr = event.target.closest('tr')
+  const inputFullName = tr.querySelector('td:nth-child(3) input')
+  const inputGender = tr.querySelector('td:nth-child(4) select')
+  const inputAge = tr.querySelector('td:nth-child(5) input')
+
+  inputFullName.disabled = true
+  inputGender.disabled = true
+  inputAge.disabled = true
+
+  item.fullName = inputFullName.value
+  item.gender = inputGender.value
+  item.age = inputAge.value
+
 }
 
-function deleteCheckbox () {
+function getIdNew (array) {
+  let max = 0
+  array.forEach(item => {
+    item.id > max ? max = item.id : max
+  })
+  return max + 1
+}
+const addNewRecord = () => {
+  const table = document.getElementById('table-body')
+  const id = getIdNew(data)
+  const html =`
+    <tr class="is-edit">
+      <td>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check">
+        </div>
+      </td>
+      <td>
+        <input class="from-control" value="${id}" disabled>
+      </td>
+      <td>
+        <input class="from-control" value="">
+      </td>
+      <td>
+        <select class="from-select">
+          <option value="Nữ">Nữ</option>
+          <option value="Nam">Nam</option>
+        </select>
+      </td>
+      <td>
+        <input class="from-control" value="">
+      </td>
+      <td>
+          <button class="btn btn-primary" onclick="saveRow(event, ${id})">Save</button>
+          <button class="btn btn-warning" onclick="setEdit(${id})">Cancel</button>
+      </td>
+    </tr>
+  `
+  data.push({
+    id: id,
+    isEdit: true,
+    checked: false,
+    fullName: '',
+    gender: '',
+    age: '',
+  })
+  table.innerHTML += html
+}
+
+function deleteChecked () {
   const tbody = document.querySelector('tbody')
-  const checkBox = tbody.querySelectorAll('tr th input')
+  const checkBox = tbody.querySelectorAll('tr td div input')
 
   for (let i = 0; i < checkBox.length; i++) {
     if (checkBox[i].checked) {
-      const id = checkBox[i].value
-      const th = checkBox[i].parentNode
-      const tr = th.parentNode
+      const tr = checkBox[i].closest('tr')
       tr.parentNode.removeChild(tr)
 
-      for (let j = 0; j < userList.length; j++) {
-        if (userList[j].id == id) {
-          userList.splice(j, 1)
+      const inputId = tr.querySelector('td:nth-child(2) input')
+      const id = inputId.value
+
+      for (let j = 0; j < data.length; j++) {
+        if (data[j].id === Number(id)) {
+          data.splice(j, 1)
         }
       }
     }
   }
 }
+
+function checkAll () {
+  const checkbox = document.getElementById('checkbox')
+  const checkAll = checkbox.checked
+  data.forEach(item => {
+    item.checked = checkAll
+  })
+  render()
+}
+
+render()
